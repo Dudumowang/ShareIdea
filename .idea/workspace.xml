@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/vue/src/assets/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/components/Aside.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/components/Header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/ChangePassword.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/Comments.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/Idea.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/Mange.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/Person.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/admin/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/views/HomeView.vue" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vue" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2Hanryo2dQgj8n3nDhwvCCx5zTV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/GitHub/ShareIdea",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors",
+    "spring.configuration.checksum": "d164d99c46d45be6b1e7585ff7ea10e7",
+    "ts.external.directory.path": "E:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\springboot\vue\src\views\admin" />
+      <recent name="D:\GitHub\springboot\vue\src\views" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+    <list>
+      <item itemvalue="npm.serve" />
+      <item itemvalue="Spring Boot.SpringbootApplication" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="" />
+      <created>1668532265229</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668532265229</updated>
+      <workItem from="1668532266514" duration="139000" />
+      <workItem from="1668532415256" duration="2764000" />
+      <workItem from="1668535491948" duration="5449000" />
+      <workItem from="1668573211051" duration="1220000" />
+      <workItem from="1668576671588" duration="5501000" />
+      <workItem from="1668582240180" duration="225000" />
+      <workItem from="1668582514833" duration="688000" />
+      <workItem from="1668584475295" duration="1247000" />
+      <workItem from="1668597559902" duration="2012000" />
+      <workItem from="1668599671478" duration="3724000" />
+      <workItem from="1668617113332" duration="6095000" />
+      <workItem from="1668667444042" duration="10952000" />
+      <workItem from="1668682220330" duration="3712000" />
+      <workItem from="1668689100057" duration="288000" />
+      <workItem from="1668691175973" duration="5420000" />
+      <workItem from="1668699044937" duration="4875000" />
+      <workItem from="1668703988638" duration="133000" />
+      <workItem from="1668704263905" duration="67000" />
+      <workItem from="1668704347737" duration="42000" />
+      <workItem from="1668786822964" duration="3908000" />
+      <workItem from="1668791573780" duration="61000" />
+      <workItem from="1668792306062" duration="8402000" />
+      <workItem from="1668828233043" duration="12516000" />
+      <workItem from="1668858288808" duration="15328000" />
+      <workItem from="1668922966611" duration="12273000" />
+      <workItem from="1668963568666" duration="2724000" />
+      <workItem from="1668966860646" duration="594000" />
+      <workItem from="1668967875119" duration="32000" />
+      <workItem from="1669021649862" duration="1159000" />
+      <workItem from="1669039949878" duration="181000" />
+      <workItem from="1669040174725" duration="217000" />
+      <workItem from="1669040482504" duration="56000" />
+      <workItem from="1669041909015" duration="355000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+</project>
