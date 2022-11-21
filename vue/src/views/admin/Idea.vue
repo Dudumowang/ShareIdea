@@ -49,7 +49,7 @@
     <el-dialog title="是否删除" :visible.sync="deleteDialogFormVisible" width="30%">
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible1 = false">取 消</el-button>
-        <el-button type="primary" @click="deleteUser">确 定</el-button>
+        <el-button type="primary" @click="deleteIdea">确 定</el-button>
       </div>
     </el-dialog>
   </div>
@@ -98,37 +98,13 @@ export default {
         }
       })
     },
-    save(){
+    deleteIdea(){
       console.log(this.form);
-      this.request.post("http://localhost:9090/user/insert",this.form).then(res=>{
-        if(res.code==='200'){
-          this.$message.success("保存成功")
-          console.log(res)
-          this.dialogFormVisible=false
-        }else{
-          this.$message.error(res.msg)
+      this.request.get("http://localhost:9090/idea/delete",{
+        params:{
+          id:this.form.id
         }
-      })
-    },
-    update(){
-      console.log(this.form);
-      this.request.post("http://localhost:9090/user/adminUpdate",this.form).then(res=>{
-        if(res.code==='200'){
-          this.$message.success("修改成功")
-          console.log(res)
-          this.dialogFormVisible1=false
-        }else{
-          this.$message.error(res.msg)
-        }
-      })
-    },
-    cancelUpdate(){
-      this.dialogFormVisible1=false
-      this.load();
-    },
-    deleteUser(){
-      console.log(this.form);
-      this.request.post("http://localhost:9090/user/delete",this.form).then(res=>{
+      }).then(res=>{
         if(res.code==='200'){
           this.$message.success("删除成功")
           console.log(res)
@@ -138,10 +114,6 @@ export default {
           this.$message.error(res.msg)
         }
       })
-    },
-    handleAdd(){
-      this.dialogFormVisible=true;
-      this.form={}
     },
     handleContent(row){
       this.form=row

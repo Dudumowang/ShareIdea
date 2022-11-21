@@ -144,5 +144,5 @@ public class UserService {
         res.put("data",data);
         res.put("total",total);
         return res;
-    }
+    }//该函数需要补充，需要删除该用户的Idea和Comment
 }

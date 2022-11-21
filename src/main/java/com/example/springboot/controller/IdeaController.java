@@ -38,5 +38,11 @@ public class IdeaController {
         return Result.success(idea);
     }
 
+    @GetMapping("/delete")
+    public Result delete(@RequestParam Integer id){
+        boolean t= ideaService.delete(id);
+        return Result.success(t);
+    }
+
 
 }

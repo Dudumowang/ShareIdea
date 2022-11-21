@@ -33,4 +33,19 @@ public class IdeaService {
         res.put("total",total);
         return res;
     }
+
+    public boolean delete(Integer id){
+        int affect=0;
+        try{
+            affect=ideaMapper.deleteById(id);
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        if(affect>0){
+            return true;
+        }
+        else{
+            throw new ServiceException(Constants.CODE_600,"Idea的ID出现错误");
+        }
+    }//待补充，需要同时删除该Idea下的Comment
 }
