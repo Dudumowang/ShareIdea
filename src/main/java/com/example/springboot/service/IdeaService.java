@@ -47,5 +47,24 @@ public class IdeaService {
         else{
             throw new ServiceException(Constants.CODE_600,"Idea的ID出现错误");
         }
-    }//待补充，需要同时删除该Idea下的Comment
+    }
+
+    public boolean insert(Idea idea){
+        idea.setId(null);
+        idea.setStars(0);
+        idea.setPubTime(null);
+        idea.setFinTime(null);
+        int affect=0;
+        try{
+            affect=ideaMapper.insert(idea);
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        if(affect>0){
+            return true;
+        }
+        else{
+            throw new ServiceException(Constants.CODE_600,"参数错误");
+        }
+    }
 }

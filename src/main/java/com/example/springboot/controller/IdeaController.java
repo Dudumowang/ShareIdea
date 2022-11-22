@@ -6,10 +6,7 @@ import com.example.springboot.mapper.IdeaMapper;
 import com.example.springboot.service.IdeaService;
 import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,5 +41,10 @@ public class IdeaController {
         return Result.success(t);
     }
 
+    @PostMapping("/insert")
+    public Result delete(@RequestBody Idea idea){
+        boolean t= ideaService.insert(idea);
+        return Result.success(t);
+    }
 
 }

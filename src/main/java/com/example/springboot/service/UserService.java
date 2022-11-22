@@ -106,10 +106,10 @@ public class UserService {
             queryWrapper.eq("id",user.getId()).eq("password",user.getPassword());
             temp=userMapper.selectOne(queryWrapper);
         }catch (Exception e){
-            throw new ServiceException(Constants.CODE_500,"系统错误");
+            throw new ServiceException(Constants.CODE_500,"系统错误1");
         }
         if(temp==null){
-            throw new ServiceException(Constants.CODE_600,"密码错误");
+            throw new ServiceException(Constants.CODE_600,"密码错误1");
         }
         //经过校验密码正确
         else {
@@ -118,13 +118,13 @@ public class UserService {
                 queryWrapper.eq("id",user.getId());
                 affect = userMapper.delete(queryWrapper);
             }catch (Exception e){
-                throw new ServiceException(Constants.CODE_500,"系统错误");
+                throw new ServiceException(Constants.CODE_500,"系统错误2");
             }
             if(affect>0){
                 return true;
             }
             else{
-                throw new ServiceException(Constants.CODE_600,"参数错误");
+                throw new ServiceException(Constants.CODE_600,"参数错误2");
             }
         }
     }
@@ -144,5 +144,5 @@ public class UserService {
         res.put("data",data);
         res.put("total",total);
         return res;
-    }//该函数需要补充，需要删除该用户的Idea和Comment
+    }//该函数需要补充，需要考虑到搜索的内容，需要完善
 }
