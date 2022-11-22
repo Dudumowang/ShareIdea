@@ -14,7 +14,7 @@ import java.util.List;
 public interface CommentMapper extends BaseMapper<Comment> {
 
     @Select("select * from comment limit #{pageNum}, #{pageSize}")
-    List<Idea> selectPage(Integer pageNum, Integer pageSize);
+    List<Comment> selectPage(Integer pageNum, Integer pageSize);
 
 
     @Select("select count(*) from comment")

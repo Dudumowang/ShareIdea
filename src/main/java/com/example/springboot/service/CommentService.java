@@ -36,7 +36,7 @@ public class CommentService {
 
     public Map<String, Object> findPage(Integer pageNum, Integer pageSize){
         pageNum=(pageNum-1)*pageSize;
-        List<Idea> data;
+        List<Comment> data;
         Integer total;
         try {
             data=commentMapper.selectPage(pageNum,pageSize);
@@ -49,6 +49,21 @@ public class CommentService {
         res.put("data",data);
         res.put("total",total);
         return res;
+    }
+
+    public boolean delete(Integer id){
+        int affect=0;
+        try{
+            affect=commentMapper.deleteById(id);
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        if(affect>0){
+            return true;
+        }
+        else{
+            throw new ServiceException(Constants.CODE_600,"删除失败");
+        }
     }
 
 }

@@ -16,7 +16,7 @@ const routes = [
       {path:'changePassword',name:'修改密码',component:()=>import('../views/admin/ChangePassword.vue')},
       {path:'user', name:'用户管理', component:()=>import('../views/admin/User')},
       {path:'idea',name:'Idea管理',component:()=>import('../views/admin/Idea.vue')},
-      {path:'comment',name:'Comment管理',component:()=>import('../views/admin/Comments.vue')}
+      {path:'comment',name:'Comment管理',component:()=>import('../views/admin/Comment.vue')}
     ]
   },
   {
