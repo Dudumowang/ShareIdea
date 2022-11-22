@@ -1,9 +1,12 @@
 package com.example.springboot.controller;
 
+import com.baomidou.mybatisplus.extension.api.R;
 import com.example.springboot.common.Result;
+import com.example.springboot.controller.dto.IdeaDTO;
 import com.example.springboot.eneity.Idea;
 import com.example.springboot.mapper.IdeaMapper;
 import com.example.springboot.service.IdeaService;
+import io.github.classgraph.json.Id;
 import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +47,18 @@ public class IdeaController {
     @PostMapping("/insert")
     public Result delete(@RequestBody Idea idea){
         boolean t= ideaService.insert(idea);
+        return Result.success(t);
+    }
+
+    @PostMapping("/updateTitle")
+    public Result updateTitle(@RequestBody IdeaDTO ideaDTO){
+        boolean t=ideaService.updateTitle(ideaDTO.getId(), ideaDTO.getTitle());
+        return Result.success(t);
+    }
+
+    @PostMapping("/updateContent")
+    public Result updateContent(@RequestBody IdeaDTO ideaDTO){
+        boolean t=ideaService.updateContent(ideaDTO.getId(), ideaDTO.getContent());
         return Result.success(t);
     }
 

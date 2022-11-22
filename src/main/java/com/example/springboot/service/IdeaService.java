@@ -4,6 +4,7 @@ import com.example.springboot.common.Constants;
 import com.example.springboot.eneity.Idea;
 import com.example.springboot.exception.ServiceException;
 import com.example.springboot.mapper.IdeaMapper;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -65,6 +66,36 @@ public class IdeaService {
         }
         else{
             throw new ServiceException(Constants.CODE_600,"参数错误");
+        }
+    }
+
+    public boolean updateTitle(Integer id,String title){
+        int affect;
+        try{
+            affect=ideaMapper.updateTitle(id,title);
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        if(affect>0){
+            return true;
+        }
+        else{
+            throw new ServiceException(Constants.CODE_600,"更改失败");
+        }
+    }
+
+    public boolean updateContent(Integer id,String content){
+        int affect;
+        try{
+            affect=ideaMapper.updateContent(id,content);
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        if(affect>0){
+            return true;
+        }
+        else{
+            throw new ServiceException(Constants.CODE_600,"更改失败");
         }
     }
 }

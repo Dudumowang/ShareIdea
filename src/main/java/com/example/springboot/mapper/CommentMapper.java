@@ -1,7 +1,9 @@
 package com.example.springboot.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.springboot.eneity.Comment;
 import com.example.springboot.eneity.Idea;
+import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -9,18 +11,14 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 @Mapper
-public interface IdeaMapper extends BaseMapper<Idea> {
+public interface CommentMapper extends BaseMapper<Comment> {
 
-    @Select("select * from idea limit #{pageNum}, #{pageSize}")
+    @Select("select * from comment limit #{pageNum}, #{pageSize}")
     List<Idea> selectPage(Integer pageNum, Integer pageSize);
 
 
-    @Select("select count(*) from idea")
+    @Select("select count(*) from comment")
     Integer selectTotal();
 
-    @Update("update set title=#{title} where id=#{id}")
-    int updateTitle(Integer id,String title);
 
-    @Update("update set content=#{content} where id=#{id}")
-    int updateContent(Integer id,String content);
 }
