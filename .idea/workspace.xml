@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserPasswordDTO.java" afterDir="false" />
+    <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="UserLogin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/src/views/user/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/user/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserPasswordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserPasswordDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,8 +132,16 @@
       <workItem from="1669111500147" duration="5861000" />
       <workItem from="1669120066419" duration="4919000" />
       <workItem from="1669135330495" duration="3668000" />
-      <workItem from="1669181089787" duration="3576000" />
+      <workItem from="1669181089787" duration="3984000" />
     </task>
+    <task id="LOCAL-00001" summary="UserLogin">
+      <created>1669184723039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669184723039</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +163,7 @@
       <path value="$PROJECT_DIR$/vue" />
     </ignored-roots>
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="UserLogin" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserLogin" />
   </component>
 </project>
