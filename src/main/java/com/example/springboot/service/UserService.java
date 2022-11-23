@@ -3,9 +3,13 @@ package com.example.springboot.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.springboot.common.Constants;
+import com.example.springboot.controller.dto.AdminDTO;
+import com.example.springboot.controller.dto.UserDTO;
+import com.example.springboot.eneity.Admin;
 import com.example.springboot.eneity.User;
 import com.example.springboot.exception.ServiceException;
 import com.example.springboot.mapper.UserMapper;
+import com.example.springboot.utils.TokenUtils;
 import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +24,28 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
+    public UserDTO login(String id, String password){
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id",id).eq("password",password);
+        User user;
+        try{
+            user=userMapper.selectOne(queryWrapper);
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        if(user!=null){
+            UserDTO userDTO = new UserDTO();
+            userDTO.setId(user.getId());
+            userDTO.setEmail(user.getEmail());
+            userDTO.setPhone(user.getPhone());
+            userDTO.setAddress(user.getAddress());
+            String token= TokenUtils.genToken(user.getId(),user.getPassword());
+            userDTO.setToken(token);
+            return userDTO;
+        }else{
+            throw new ServiceException(Constants.CODE_600,"用户名或密码错误");
+        }
+    }
 
     public boolean insert(User user){
         int affect;
@@ -144,5 +170,5 @@ public class UserService {
         res.put("data",data);
         res.put("total",total);
         return res;
-    }//该函数需要补充，需要考虑到搜索的内容，需要完善
+    }//该函数需要补充，需要考虑到搜索的内容，需要完善(需要在UserMapper对相关函数进行补充)
 }
