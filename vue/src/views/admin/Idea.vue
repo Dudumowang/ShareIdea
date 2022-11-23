@@ -1,15 +1,9 @@
 <template>
   <div>
     <div style="margin: 10px 0">
-      <el-input style="width: 200px" placeholder="请输入ID" suffix-icon="el-icon-search" v-model="userid"></el-input>
-      <el-input style="width: 200px" placeholder="请输入用户名" suffix-icon="el-icon-message" v-model="username" class="ml-5"></el-input>
-      <el-input style="width: 200px" placeholder="请输入手机号" suffix-icon="el-icon-position" v-model="userMobile" class="ml-5"></el-input>
-      <el-input style="width: 200px" placeholder="请输入邮箱" suffix-icon="el-icon-position" v-model="userEmail" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入用户名" suffix-icon="el-icon-message" v-model="userid" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入标题" suffix-icon="el-icon-position" v-model="ideaTitle" class="ml-5"></el-input>
       <el-button class="ml-5" type="primary" @click="load">搜索</el-button>
-    </div>
-    <div style="margin: 10px 0">
-      <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-circle-plus-outline"></i></el-button>
-      <el-button type="danger">删除 <i class="el-icon-remove-outline"></i></el-button>
     </div>
     <el-table :data="tableData" border stripe :header-cell-class-name="headerBg">
       <el-table-column prop="id" label="ID" width="80"></el-table-column>
@@ -36,7 +30,7 @@
           :total="total">
       </el-pagination>
     </div>
-    <el-dialog title="用户信息" :visible.sync="dialogFormVisible" width="50%">
+    <el-dialog title="创意信息" :visible.sync="dialogFormVisible" width="50%">
       <el-form label-width="80px">
         <el-form-item label="内容">
           <el-input type="textarea" :autosize="{ minRows:8, maxRows:16}" v-model="form.content" autocomplete="off" ></el-input>
@@ -64,13 +58,10 @@ export default {
       total: 0,
       pageNum: 1,
       pageSize: 10,
-      username: "",
       userid:"",
-      userMobile:"",
-      userEmail:"",
+      ideaTitle:"",
       form:{},
       dialogFormVisible:false,
-      dialogFormVisible1:false,
       deleteDialogFormVisible:false,
       headerBg: 'headerBg'
     }
@@ -84,6 +75,8 @@ export default {
         params:{
           pageNum:this.pageNum,
           pageSize:this.pageSize,
+          userid:this.userid,
+          title:this.ideaTitle
         }
       }).then(res=>{
 

@@ -1,11 +1,8 @@
 package com.example.springboot.controller;
-
-import com.example.springboot.common.Constants;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.AdminDTO;
 import com.example.springboot.controller.dto.AdminPasswordDTO;
 import com.example.springboot.eneity.Admin;
-import com.example.springboot.exception.ServiceException;
 import com.example.springboot.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -18,12 +18,16 @@ public class IdeaService {
     @Autowired
     private IdeaMapper ideaMapper;
 
-    public Map<String, Object> findPage(Integer pageNum, Integer pageSize){
+    public Map<String, Object> findPage(Integer pageNum, Integer pageSize,String userid,String title){
         pageNum=(pageNum-1)*pageSize;
         List<Idea> data;
         Integer total;
+        userid="%"+userid+"%";
+        title="%"+title+"%";
+        System.out.println(userid);
+        System.out.println(title);
         try {
-            data=ideaMapper.selectPage(pageNum,pageSize);
+            data=ideaMapper.selectPage(pageNum,pageSize,userid,title);
             System.out.println(data);
             total = ideaMapper.selectTotal();
         }catch (Exception e){

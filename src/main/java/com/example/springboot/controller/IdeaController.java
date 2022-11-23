@@ -1,13 +1,10 @@
 package com.example.springboot.controller;
 
-import com.baomidou.mybatisplus.extension.api.R;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.IdeaDTO;
 import com.example.springboot.eneity.Idea;
 import com.example.springboot.mapper.IdeaMapper;
 import com.example.springboot.service.IdeaService;
-import io.github.classgraph.json.Id;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,9 +22,11 @@ public class IdeaController {
     private IdeaService ideaService;
 
     @GetMapping("/page")
-    public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize){
+    public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize,
+                           @RequestParam (defaultValue = "") String userid,
+                           @RequestParam (defaultValue = "") String title){
         Map<String, Object> res=new HashMap<>();
-        res=ideaService.findPage(pageNum,pageSize);
+        res=ideaService.findPage(pageNum,pageSize,userid,title);
         return Result.success(res);
     }
 

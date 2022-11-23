@@ -3,17 +3,13 @@ package com.example.springboot.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.springboot.common.Constants;
-import com.example.springboot.controller.dto.AdminDTO;
 import com.example.springboot.controller.dto.UserDTO;
-import com.example.springboot.eneity.Admin;
 import com.example.springboot.eneity.User;
 import com.example.springboot.exception.ServiceException;
 import com.example.springboot.mapper.UserMapper;
 import com.example.springboot.utils.TokenUtils;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.List;

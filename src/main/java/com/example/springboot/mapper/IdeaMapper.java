@@ -11,8 +11,8 @@ import java.util.List;
 @Mapper
 public interface IdeaMapper extends BaseMapper<Idea> {
 
-    @Select("select * from idea limit #{pageNum}, #{pageSize}")
-    List<Idea> selectPage(Integer pageNum, Integer pageSize);
+    @Select("select * from idea where uid like #{userid} and title like #{title} limit #{pageNum}, #{pageSize}")
+    List<Idea> selectPage(Integer pageNum, Integer pageSize,String userid,String title);
 
 
     @Select("select count(*) from idea")
