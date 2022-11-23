@@ -4,6 +4,7 @@ import com.example.springboot.common.Result;
 import com.example.springboot.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.yaml.snakeyaml.events.Event;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,9 +17,11 @@ public class CommentController {
     private CommentService commentService;
 
     @GetMapping("/page")
-    public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize){
+    public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize,
+                           @RequestParam (defaultValue = "") String userId,
+                           @RequestParam (defaultValue = "") String ideaId){
         Map<String, Object> res=new HashMap<>();
-        res=commentService.findPage(pageNum,pageSize);
+        res=commentService.findPage(pageNum,pageSize,userId, ideaId);
         return Result.success(res);
     }
 

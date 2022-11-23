@@ -34,12 +34,14 @@ public class CommentService {
         }
     }
 
-    public Map<String, Object> findPage(Integer pageNum, Integer pageSize){
+    public Map<String, Object> findPage(Integer pageNum, Integer pageSize,String userId,String ideaId){
         pageNum=(pageNum-1)*pageSize;
         List<Comment> data;
         Integer total;
+        userId="%"+userId+"%";
+        ideaId="%"+ideaId+"%";
         try {
-            data=commentMapper.selectPage(pageNum,pageSize);
+            data=commentMapper.selectPage(pageNum,pageSize,userId,ideaId);
             System.out.println(data);
             total = commentMapper.selectTotal();
         }catch (Exception e){

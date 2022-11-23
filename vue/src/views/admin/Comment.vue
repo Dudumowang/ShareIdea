@@ -1,10 +1,8 @@
 <template>
   <div>
     <div style="margin: 10px 0">
-      <el-input style="width: 200px" placeholder="请输入ID" suffix-icon="el-icon-search" v-model="userid"></el-input>
-      <el-input style="width: 200px" placeholder="请输入用户名" suffix-icon="el-icon-message" v-model="username" class="ml-5"></el-input>
-      <el-input style="width: 200px" placeholder="请输入手机号" suffix-icon="el-icon-position" v-model="userMobile" class="ml-5"></el-input>
-      <el-input style="width: 200px" placeholder="请输入邮箱" suffix-icon="el-icon-position" v-model="userEmail" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入评论发布ID" suffix-icon="el-icon-message" v-model="userId" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入回复的创意ID" suffix-icon="el-icon-position" v-model="ideaId" class="ml-5"></el-input>
       <el-button class="ml-5" type="primary" @click="load">搜索</el-button>
     </div>
     <el-table :data="tableData" border stripe :header-cell-class-name="headerBg">
@@ -58,10 +56,8 @@ export default {
       total: 0,
       pageNum: 1,
       pageSize: 10,
-      username: "",
-      userid:"",
-      userMobile:"",
-      userEmail:"",
+      userId:"",
+      ideaId:"",
       form:{},
       dialogFormVisible:false,
       dialogFormVisible1:false,
@@ -79,6 +75,8 @@ export default {
         params:{
           pageNum:this.pageNum,
           pageSize:this.pageSize,
+          userId:this.userId,
+          ideaId:this.ideaId
         }
       }).then(res=>{
 

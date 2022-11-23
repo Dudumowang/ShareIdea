@@ -45,6 +45,9 @@ export default {
 
     if(localStorage.getItem("admin"))
         this.admin=JSON.parse(localStorage.getItem("admin"))
+    else{
+      this.$router.push("/AdminLogin")
+    }
   },
   props:{
     collapseBtnClass:String,
