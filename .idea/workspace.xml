@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/user/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/CommentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/IdeaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/IdeaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/IdeaMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/IdeaMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/IdeaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/IdeaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/src/views/admin/Comments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/admin/Comment.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -86,7 +78,7 @@
       <recent name="D:\GitHub\springboot\vue\src\views" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+  <component name="RunManager" selected="npm.serve">
     <list>
       <item itemvalue="npm.serve" />
       <item itemvalue="Spring Boot.SpringbootApplication" />
@@ -140,6 +132,7 @@
       <workItem from="1669111500147" duration="5861000" />
       <workItem from="1669120066419" duration="4919000" />
       <workItem from="1669135330495" duration="3668000" />
+      <workItem from="1669181089787" duration="561000" />
     </task>
     <servers />
   </component>
