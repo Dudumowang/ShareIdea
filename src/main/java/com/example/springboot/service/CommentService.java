@@ -43,7 +43,7 @@ public class CommentService {
         try {
             data=commentMapper.selectPage(pageNum,pageSize,userId,ideaId);
             System.out.println(data);
-            total = commentMapper.selectTotal();
+            total = commentMapper.selectTotal(userId,ideaId);
         }catch (Exception e){
             throw new ServiceException(Constants.CODE_500,"系统错误");
         }

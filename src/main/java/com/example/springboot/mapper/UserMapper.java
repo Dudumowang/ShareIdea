@@ -21,8 +21,8 @@ public interface UserMapper extends BaseMapper<User>{
             " limit #{pageNum},#{pageSize}")
     List<User> selectPage(Integer pageNum, Integer pageSize,String id,String username,String phone,String email);
 
-    @Select("select count(*) from user")
-    Integer selectTotal();
+    @Select("select count(*) from user where id like #{id} and username like #{username} and phone like #{phone} and email like #{email}")
+    Integer selectTotal(String id,String username,String phone,String email);
 
 
 

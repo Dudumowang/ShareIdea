@@ -167,7 +167,7 @@ public class UserService {
 
         try {
             data=userMapper.selectPage(pageNum,pageSize,id,username,phone,email);
-            total = userMapper.selectTotal();
+            total = userMapper.selectTotal(id,username,phone,email);
         }catch (Exception e){
             throw new ServiceException(Constants.CODE_500,"系统错误");
         }

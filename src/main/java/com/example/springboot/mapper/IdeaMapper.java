@@ -15,8 +15,8 @@ public interface IdeaMapper extends BaseMapper<Idea> {
     List<Idea> selectPage(Integer pageNum, Integer pageSize,String userid,String title);
 
 
-    @Select("select count(*) from idea")
-    Integer selectTotal();
+    @Select("select count(*) from idea where uid like #{userid} and title like #{title}")
+    Integer selectTotal(String userid,String title);
 
     @Update("update set title=#{title} where id=#{id}")
     int updateTitle(Integer id,String title);

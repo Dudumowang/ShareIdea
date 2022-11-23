@@ -29,7 +29,7 @@ public class IdeaService {
         try {
             data=ideaMapper.selectPage(pageNum,pageSize,userid,title);
             System.out.println(data);
-            total = ideaMapper.selectTotal();
+            total = ideaMapper.selectTotal(userid,title);
         }catch (Exception e){
             throw new ServiceException(Constants.CODE_500,"系统错误");
         }
