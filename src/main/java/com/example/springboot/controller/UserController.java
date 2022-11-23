@@ -1,21 +1,12 @@
 package com.example.springboot.controller;
-
-import com.baomidou.mybatisplus.extension.api.R;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.UserDTO;
 import com.example.springboot.eneity.User;
-import com.example.springboot.mapper.UserMapper;
 import com.example.springboot.service.UserService;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.swing.*;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/user")
@@ -53,9 +44,18 @@ public class UserController {
 
 
     @GetMapping("/page")
-    public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize){
+    public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize,
+                           @RequestParam (defaultValue = "") String id,
+                           @RequestParam (defaultValue = "") String username,
+                           @RequestParam (defaultValue = "") String phone,
+                           @RequestParam (defaultValue = "") String email){
         Map<String, Object> res=new HashMap<>();
-        res=userService.findPage(pageNum,pageSize);
+        System.out.println("Controller:id");
+        System.out.println(id);
+        System.out.println(username);
+        System.out.println(phone);
+        System.out.println(email);
+        res=userService.findPage(pageNum,pageSize,id,username,phone,email);
         return Result.success(res);
     }
 

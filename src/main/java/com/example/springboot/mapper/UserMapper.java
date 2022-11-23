@@ -13,8 +13,13 @@ public interface UserMapper extends BaseMapper<User>{
     @Select("SELECT * from user")
     List<User> findAll();
 
-    @Select("select * from user limit #{pageNum}, #{pageSize}")
-    List<User> selectPage(Integer pageNum, Integer pageSize);
+    @Select("select * from user" +
+            " where id like #{id} " +
+            "and username like #{username} " +
+            "and phone like #{phone} " +
+            "and email like #{email} " +
+            " limit #{pageNum},#{pageSize}")
+    List<User> selectPage(Integer pageNum, Integer pageSize,String id,String username,String phone,String email);
 
     @Select("select count(*) from user")
     Integer selectTotal();

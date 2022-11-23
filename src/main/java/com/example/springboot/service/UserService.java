@@ -155,13 +155,22 @@ public class UserService {
         }
     }
 
-    public Map<String, Object> findPage(Integer pageNum, Integer pageSize) {
+    public Map<String, Object> findPage(Integer pageNum, Integer pageSize,
+                                        String id,String username,String phone,String email) {
         pageNum=(pageNum-1)*pageSize;
         List<User> data;
         Integer total;
+
+        System.out.println(id);
+        id="%"+id+"%";
+        username="%"+username+"%";
+        phone="%"+phone+"%";
+        email="%"+email+"%";
+        System.out.println("id:\n");
+        System.out.println(id);
+
         try {
-            //data = userMapper.selectPage(pageNum, pageSize);
-            data=userMapper.selectPage(pageNum,pageSize);
+            data=userMapper.selectPage(pageNum,pageSize,id,username,phone,email);
             total = userMapper.selectTotal();
         }catch (Exception e){
             throw new ServiceException(Constants.CODE_500,"系统错误");
