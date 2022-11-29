@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="UserLogin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/4c1e80e3a61b4e96bc591631df3e4e35.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/AdminDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/AdminDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/src/views/admin/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/admin/Login.vue" afterDir="false" />
-    </list>
+    <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="UserLogin" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +141,7 @@
       <workItem from="1669224499918" duration="1888000" />
       <workItem from="1669226532603" duration="660000" />
       <workItem from="1669642496740" duration="2614000" />
-      <workItem from="1669677296479" duration="3737000" />
+      <workItem from="1669677296479" duration="4076000" />
     </task>
     <task id="LOCAL-00001" summary="UserLogin">
       <created>1669184723039</created>
