@@ -7,6 +7,11 @@
         <el-breadcrumb-item>{{ currentPathName }}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
+    <div style="display: inline-block">
+      <router-link to="/person">
+      <img :src="admin.avatarUrl" alt=""
+           style="width: 34px; height:34px; display:flex; border-radius: 50%; position: relative; top: 10px; right: 10px"></router-link>
+    </div>
     <el-dropdown style="width: 70px; cursor: pointer">
       <span>{{this.admin.id}}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
       <el-dropdown-menu slot="dropdown" >
@@ -42,7 +47,6 @@ export default {
     }
   },
   created() {
-
     if(localStorage.getItem("admin"))
         this.admin=JSON.parse(localStorage.getItem("admin"))
     else{

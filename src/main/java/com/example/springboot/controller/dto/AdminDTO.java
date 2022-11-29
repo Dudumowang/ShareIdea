@@ -1,10 +1,19 @@
 package com.example.springboot.controller.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AdminDTO {
     private String id;
     private String mobile;
     private String email;
     private String token;
+
+    private String avatarUrl;
 
     public String getId() {
         return id;

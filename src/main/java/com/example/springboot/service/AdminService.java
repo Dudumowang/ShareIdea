@@ -31,6 +31,7 @@ public class AdminService {
             adminDTO.setId(admin.getId());
             adminDTO.setEmail(admin.getEmail());
             adminDTO.setMobile(admin.getMobile());
+            adminDTO.setAvatarUrl(admin.getAvatarUrl());
             String token= TokenUtils.genToken(admin.getId(),admin.getPassword());
             adminDTO.setToken(token);
             return adminDTO;

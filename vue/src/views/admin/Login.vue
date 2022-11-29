@@ -38,7 +38,7 @@ export default {
           localStorage.removeItem("admin")
           localStorage.setItem("admin", JSON.stringify(res.data)) //存储信息到浏览器
           console.log(JSON.stringify(res.data))
-          this.$message.success("登陆成功")
+          this.$message.success("登录成功")
           this.$router.push("/home")
         } else {
           this.$message.error(res.msg)
