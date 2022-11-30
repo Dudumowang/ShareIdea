@@ -3,6 +3,8 @@ package com.example.springboot.eneity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Date;
+
 @TableName("user")
 public class User {
     private String  id;
@@ -11,6 +13,25 @@ public class User {
     private String email;
     private String phone;
     private String address;
+    private Date createTime;
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    private String avatarUrl;
 
     public String getId() {
         return id;
@@ -69,6 +90,8 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
+                ", createTime=" + createTime +
+                ", avatarUrl='" + avatarUrl + '\'' +
                 '}';
     }
 }

@@ -8,8 +8,8 @@
            router
   >
     <div style="height: 60px; line-height: 60px; text-align: center">
-      <img src="../assets/logo.png" alt="" style="width: 20px; position: relative; top: 5px; right: 5px">
-      <b style="color: white" v-show="logoTextShow">后台管理系统</b>
+      <img src="../assets/logo.png" alt="" style="width: 20px; position: relative; top: 5px;">
+      <b style="color: white; margin-left: 5px" >后台管理系统</b>
     </div>
     <el-menu-item index="/home">
       <template slot="title">
@@ -17,38 +17,67 @@
         <span slot="title">主页</span>
       </template>
     </el-menu-item>
-    <el-submenu index="2">
-      <template slot="title">
-        <i class="el-icon-menu"></i>
-        <span slot="title">系统管理</span>
-      </template>
-      <el-menu-item index="/user">
-        <i class="el-icon-s-custom"></i>
-        <span slot="title">用户管理</span>
-      </el-menu-item>
-      <el-menu-item index="/idea">
-        <i class="el-icon-chat-line-round"></i>
-        <span slot="title">创意管理</span>
-      </el-menu-item>
-      <el-menu-item index="/comment">
-        <i class="el-icon-chat-dot-round"></i>
-        <span slot="title">评论管理</span>
-      </el-menu-item>
-    </el-submenu>
-  </el-menu>
-</template>
 
-<script>
-export default {
-  name:"Aside",
-  props:{
-    isCollapse:Boolean,
-    logoTextShow:Boolean
+
+      <el-submenu index="2">
+        <template slot="title">
+          <i class="el-icon-menu"></i>
+          <span slot="title">系统管理</span>
+        </template>
+        <el-menu-item index="/user">
+          <i class="el-icon-s-custom"></i>
+          <span slot="title">用户管理</span>
+        </el-menu-item>
+
+        <el-menu-item index="/admin">
+          <i class="el-icon-s-custom"></i>
+          <span slot="title">管理员管理</span>
+        </el-menu-item>
+
+        <el-menu-item index="/idea">
+          <i class="el-icon-chat-line-round"></i>
+          <span slot="title">创意管理</span>
+        </el-menu-item>
+
+        <el-menu-item index="/comment">
+          <i class="el-icon-chat-dot-round"></i>
+          <span slot="title">评论管理</span>
+        </el-menu-item>
+
+        <el-menu-item index="/file">
+          <i class="el-icon-document"></i>
+          <span slot="title">文件管理</span>
+        </el-menu-item>
+      </el-submenu>
+
+      <el-menu-item index="/changePassword">
+        <template slot="title">
+          <i class="el-icon-lock"></i>
+          <span slot="title">修改密码</span>
+        </template>
+      </el-menu-item>
+
+      <el-menu-item index="/AdminLogin">
+        <template slot="title">
+          <i class="el-icon-switch-button"></i>
+          <span slot="title">退出登录</span>
+        </template>
+      </el-menu-item>
+
+    </el-menu>
+  </template>
+
+  <script>
+  export default {
+    name:"Aside",
+    props:{
+      isCollapse:Boolean,
+      logoTextShow:Boolean
+    }
   }
-}
-</script>
+  </script>
 
 
-<style scoped>
+  <style scoped>
 
-</style>
+  </style>

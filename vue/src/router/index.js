@@ -15,8 +15,10 @@ const routes = [
       {path:'person',name:'个人信息',component:()=>import('../views/admin/Person.vue')},
       {path:'changePassword',name:'修改密码',component:()=>import('../views/admin/ChangePassword.vue')},
       {path:'user', name:'用户管理', component:()=>import('../views/admin/User')},
+      {path:'admin', name:'管理员管理', component:()=>import('../views/admin/Admin.vue')},
       {path:'idea',name:'Idea管理',component:()=>import('../views/admin/Idea.vue')},
-      {path:'comment',name:'Comment管理',component:()=>import('../views/admin/Comment.vue')}
+      {path:'comment',name:'Comment管理',component:()=>import('../views/admin/Comment.vue')},
+      {path: 'file', name: '文件管理', component: () => import('../views/admin/File.vue')}
     ]
   },
   {
@@ -30,6 +32,7 @@ const routes = [
     name:'Login',
     component:()=>import('../views/admin/Login')
   }
+
 ]
 
 const router = new VueRouter({

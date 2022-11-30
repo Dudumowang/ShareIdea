@@ -1,7 +1,6 @@
 package com.example.springboot.common;
 
 
-import com.baomidou.mybatisplus.extension.api.R;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
