@@ -139,23 +139,22 @@ public class AdminService {
 
     }
 
-    public Map<String, Object> findPage(Integer pageNum, Integer pageSize, String id, String name, String moblie, String email) {
+    public Map<String, Object> findPage(Integer pageNum, Integer pageSize, String id,String mobile, String email) {
             pageNum=(pageNum-1)*pageSize;
             List<Admin> data;
             Integer total;
 
             System.out.println(id);
             id="%"+id+"%";
-            name="%"+name+"%";
-            moblie="%"+moblie+"%";
+            mobile="%"+mobile+"%";
             email="%"+email+"%";
             System.out.println("id:\n");
             System.out.println(id);
 
             try {
-                data=adminMapper.selectPage(pageNum,pageSize,id,name,moblie,email);
+                data=adminMapper.selectPage(pageNum,pageSize,id,mobile,email);
                 System.out.println(data);
-                total = adminMapper.selectTotal(id,name,moblie,email);
+                total = adminMapper.selectTotal(id,mobile,email);
             }catch (Exception e){
                 throw new ServiceException(Constants.CODE_500,"系统错误");
             }
@@ -163,6 +162,6 @@ public class AdminService {
             res.put("data",data);
             res.put("total",total);
             return res;
-        }//该函数需要补充，需要考虑到搜索的内容，需要完善(需要在UserMapper对相关函数进行补充)
+        }
 
 }

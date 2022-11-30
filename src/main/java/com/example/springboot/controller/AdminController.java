@@ -59,16 +59,14 @@ public class AdminController {
     @GetMapping("/page")
     public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize,
                            @RequestParam (defaultValue = "") String id,
-                           @RequestParam (defaultValue = "") String name,
-                           @RequestParam (defaultValue = "") String moblie,
+                           @RequestParam (defaultValue = "") String mobile,
                            @RequestParam (defaultValue = "") String email){
         Map<String, Object> res=new HashMap<>();
         System.out.println("Controller:id");
         System.out.println(id);
-        System.out.println(name);
-        System.out.println(moblie);
+        System.out.println(mobile);
         System.out.println(email);
-        res=adminService.findPage(pageNum,pageSize,id,name,moblie,email);
+        res=adminService.findPage(pageNum,pageSize,id,mobile,email);
         return Result.success(res);
     }
 }

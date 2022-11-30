@@ -15,13 +15,12 @@ public interface AdminMapper extends BaseMapper<Admin> {
 
     @Select("select * from admin" +
             " where id like #{id} " +
-            "and name like #{name} " +
             "and mobile like #{mobile} " +
             "and email like #{email} " +
             " limit #{pageNum},#{pageSize}")
-    List<Admin> selectPage(Integer pageNum, Integer pageSize,String id,String name,String mobile,String email);
+    List<Admin> selectPage(Integer pageNum, Integer pageSize,String id,String mobile,String email);
 
-    @Select("select count(*) from admin where id like #{id} and name like #{name} and mobile like #{mobile} and email like #{email}")
-    Integer selectTotal(String id,String name,String mobile,String email);
+    @Select("select count(*) from admin where id like #{id} and mobile like #{mobile} and email like #{email}")
+    Integer selectTotal(String id,String mobile,String email);
 
 }
