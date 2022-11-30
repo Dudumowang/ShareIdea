@@ -69,4 +69,11 @@ public class AdminController {
         res=adminService.findPage(pageNum,pageSize,id,mobile,email);
         return Result.success(res);
     }
+
+    @GetMapping("/total")
+    public Result AdminTotal(){
+        int res;
+        res=adminService.AdminTotal();
+        return Result.success(res);
+    }
 }

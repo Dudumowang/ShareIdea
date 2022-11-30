@@ -23,4 +23,6 @@ public interface AdminMapper extends BaseMapper<Admin> {
     @Select("select count(*) from admin where id like #{id} and mobile like #{mobile} and email like #{email}")
     Integer selectTotal(String id,String mobile,String email);
 
+    @Select("select count(*) from admin")
+    Integer Total();
 }

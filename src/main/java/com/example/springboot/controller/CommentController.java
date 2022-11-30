@@ -31,4 +31,11 @@ public class CommentController {
         t= commentService.delete(id);
         return Result.success(t);
     }
+
+    @GetMapping("/total")
+    public Result CommentTotal(){
+        int res;
+        res=commentService.CommentTotal();
+        return Result.success(res);
+    }
 }

@@ -5,7 +5,7 @@
         <el-card style="color: #409EFF">
           <div><i class="el-icon-user-solid" /> 用户总数</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            94
+            {{this.userNum}}
           </div>
         </el-card>
       </el-col>
@@ -13,7 +13,7 @@
         <el-card style="color: #F56C6C">
           <div><i class="el-icon-chat-line-round" /> 总创意数</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-             980
+             {{this.ideaNum}}
           </div>
         </el-card>
       </el-col>
@@ -21,7 +21,7 @@
         <el-card style="color: #67C23A">
           <div><i class="el-icon-chat-dot-round" /> 总评论数</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-             958
+             {{this.commentNum}}
           </div>
         </el-card>
       </el-col>
@@ -29,7 +29,7 @@
         <el-card style="color: #E6A23C">
           <div><i class="el-icon-user-solid" /> 管理员总数</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            10
+            {{this.adminNum}}
           </div>
         </el-card>
       </el-col>
@@ -54,8 +54,53 @@ export default {
   name: "Home",
   data() {
     return {
-
+      adminNum:"",
+      userNum:"",
+      ideaNum:"",
+      commentNum:""
     }
+  },
+  created() {
+    this.request.get("http://localhost:9090/admin/total").then(res=>{
+      // console.log(res);
+      if(res.code==='200'){
+        console.log(res)
+        this.adminNum=res.data;
+      }
+      else{
+        this.$message.error(res.msg);
+      }
+    })
+    this.request.get("http://localhost:9090/user/total").then(res=>{
+      // console.log(res);
+      if(res.code==='200'){
+        console.log(res)
+        this.userNum=res.data;
+      }
+      else{
+        this.$message.error(res.msg);
+      }
+    })
+    this.request.get("http://localhost:9090/idea/total").then(res=>{
+      // console.log(res);
+      if(res.code==='200'){
+        console.log(res)
+        this.ideaNum=res.data;
+      }
+      else{
+        this.$message.error(res.msg);
+      }
+    })
+    this.request.get("http://localhost:9090/comment/total").then(res=>{
+      // console.log(res);
+      if(res.code==='200'){
+        console.log(res)
+        this.commentNum=res.data;
+      }
+      else{
+        this.$message.error(res.msg);
+      }
+    })
   },
   mounted() {  // 页面元素渲染之后再触发
     var option = {

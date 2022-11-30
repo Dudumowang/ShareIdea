@@ -65,4 +65,11 @@ public class UserController {
         t=userService.updateWithoutPassword(user);
         return Result.success(t);
     }
+
+    @GetMapping("/total")
+    public Result CommentTotal(){
+        int res;
+        res=userService.UserTotal();
+        return Result.success(res);
+    }
 }

@@ -61,4 +61,11 @@ public class IdeaController {
         return Result.success(t);
     }
 
+    @GetMapping("/total")
+    public Result CommentTotal(){
+        int res;
+        res=ideaService.IdeaTotal();
+        return Result.success(res);
+    }
+
 }

@@ -24,6 +24,9 @@ public interface UserMapper extends BaseMapper<User>{
     @Select("select count(*) from user where id like #{id} and username like #{username} and phone like #{phone} and email like #{email}")
     Integer selectTotal(String id,String username,String phone,String email);
 
+    @Select("select count(*) from user")
+    Integer Total();
+
 
 
 

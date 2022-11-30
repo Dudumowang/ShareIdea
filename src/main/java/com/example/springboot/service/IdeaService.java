@@ -102,4 +102,14 @@ public class IdeaService {
             throw new ServiceException(Constants.CODE_600,"更改失败");
         }
     }
+
+    public int IdeaTotal(){
+        int t;
+        try{
+            t=ideaMapper.Total();
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        return t;
+    }
 }

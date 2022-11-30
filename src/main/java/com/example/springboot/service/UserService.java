@@ -175,5 +175,15 @@ public class UserService {
         res.put("data",data);
         res.put("total",total);
         return res;
-    }//该函数需要补充，需要考虑到搜索的内容，需要完善(需要在UserMapper对相关函数进行补充)
+    }
+
+    public int UserTotal(){
+        int t;
+        try{
+            t=userMapper.Total();
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        return t;
+    }
 }

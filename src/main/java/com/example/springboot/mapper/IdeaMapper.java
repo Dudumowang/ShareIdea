@@ -23,4 +23,7 @@ public interface IdeaMapper extends BaseMapper<Idea> {
 
     @Update("update set content=#{content} where id=#{id}")
     int updateContent(Integer id,String content);
+
+    @Select("select count(*) from idea")
+    Integer Total();
 }

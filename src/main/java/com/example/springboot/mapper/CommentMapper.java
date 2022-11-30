@@ -19,5 +19,6 @@ public interface CommentMapper extends BaseMapper<Comment> {
     @Select("select count(*) from comment where pubId like #{userId} and reId like #{ideaId} ")
     Integer selectTotal(String userId,String ideaId);
 
-
+    @Select("select count(*) from comment")
+    Integer Total();
 }

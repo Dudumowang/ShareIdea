@@ -164,4 +164,14 @@ public class AdminService {
             return res;
         }
 
+    public int AdminTotal(){
+        int t;
+        try{
+            t=adminMapper.Total();
+            System.out.println(t);
+        }catch (Exception e){
+            throw new ServiceException(Constants.CODE_500,"系统错误");
+        }
+        return t;
+    }
 }
