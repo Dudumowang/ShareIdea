@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="UserLogin" />
+    <list default="true" id="2a7cf2da-64f6-4a4e-b77d-41f2f4936d4d" name="Changes" comment="UserLogin">
+      <change afterPath="$PROJECT_DIR$/vue/src/components/UserAside.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/components/UserHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/user/UserHome.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/user/UserIndex.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/user/UserInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/eneity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/dto/UserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/eneity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/eneity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/views/user/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/user/Login.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +34,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -142,6 +159,7 @@
       <workItem from="1669226532603" duration="660000" />
       <workItem from="1669642496740" duration="2614000" />
       <workItem from="1669677296479" duration="4076000" />
+      <workItem from="1669785342899" duration="7524000" />
     </task>
     <task id="LOCAL-00001" summary="UserLogin">
       <created>1669184723039</created>

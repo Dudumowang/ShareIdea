@@ -2,6 +2,7 @@ package com.example.springboot.service;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.springboot.common.Constants;
 import com.example.springboot.controller.dto.UserDTO;
 import com.example.springboot.eneity.User;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class UserService {
+public class UserService extends ServiceImpl<UserMapper, User> {
     @Autowired
     private UserMapper userMapper;
 
@@ -35,6 +36,8 @@ public class UserService {
             userDTO.setEmail(user.getEmail());
             userDTO.setPhone(user.getPhone());
             userDTO.setAddress(user.getAddress());
+            userDTO.setAvatarUrl(user.getAvatarUrl());
+            userDTO.setUsername(user.getUsername());
             String token= TokenUtils.genToken(user.getId(),user.getPassword());
             userDTO.setToken(token);
             return userDTO;

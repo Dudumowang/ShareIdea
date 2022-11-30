@@ -1,4 +1,6 @@
 package com.example.springboot.controller;
+import cn.hutool.core.util.StrUtil;
+import com.example.springboot.common.Constants;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.UserDTO;
 import com.example.springboot.eneity.User;
@@ -40,6 +42,25 @@ public class UserController {
         System.out.println(user.toString());
         boolean t =userService.delete(user);
         return Result.success(t);
+    }
+
+    @PostMapping("/save")
+    public Result saveOrUpdate(@RequestBody User user){
+        String username = user.getUsername();
+        String email = user.getEmail();
+        String phone = user.getPhone();
+        if (StrUtil.isBlank(username) || StrUtil.isBlank(email) || StrUtil.isBlank(phone)) {
+            return Result.error(Constants.CODE_500, "用户名、 邮箱、 电话号码不能为空！");
+        }
+        if ( phone.length() != 11) {
+            return Result.error(Constants.CODE_500, "电话号码格式错误！");
+        }
+        try {
+            Integer a = Integer.parseInt(phone);
+        } catch (Exception e) {
+            return Result.error(Constants.CODE_500, "电话号码格式错误!");
+        }
+        return Result.success(userService.saveOrUpdate(user));
     }
 
 

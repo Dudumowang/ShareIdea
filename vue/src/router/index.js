@@ -29,6 +29,29 @@ const routes = [
     path:'/AdminLogin',
     name:'Login',
     component:()=>import('../views/admin/Login')
+  },
+  {
+    path:'/userLogin',
+    name:'userLogin',
+    component: ()=>import('../views/user/Login')
+  },
+  {
+    path:'/UserHome',
+    name:'用户主页',
+    component: ()=>import('../views/user/UserHome'),
+    redirect: '/UserIndex',
+    children: [
+      {
+        path: '/UserInfo',
+        name: '个人信息',
+        component: ()=>import('../views/user/UserInfo')
+      },
+      {
+        path:'/UserIndex',
+        name:'用户主页',
+        component: () => import('../views/user/UserIndex')
+      }
+    ]
   }
 ]
 

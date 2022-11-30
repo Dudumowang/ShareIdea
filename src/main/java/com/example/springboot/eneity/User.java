@@ -1,9 +1,16 @@
 package com.example.springboot.eneity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @TableName("user")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     private String  id;
     private String username;
@@ -11,6 +18,9 @@ public class User {
     private String email;
     private String phone;
     private String address;
+
+    @TableField("avatar_url")
+    private String avatarUrl;
 
     public String getId() {
         return id;
