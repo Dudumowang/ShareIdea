@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDTO {
-    private String  id;
+    private Integer  id;
 
     private String username;
     private String email;
@@ -17,14 +17,6 @@ public class UserDTO {
 
     private String avatarUrl;
     private String token;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getEmail() {
         return email;

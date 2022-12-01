@@ -1,13 +1,34 @@
 package com.example.springboot.eneity;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("idea")
 public class Idea {
+
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     private String uid;
     private String type;
     private String title;
+
     private String content;
+
+    @TableField("pubtime")
     private String pubTime;
+
+    @TableField("fintime")
     private String finTime;
 
     private int stars;
@@ -50,22 +71,6 @@ public class Idea {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public String getPubTime() {
-        return pubTime;
-    }
-
-    public void setPubTime(String pubTime) {
-        this.pubTime = pubTime;
-    }
-
-    public String getFinTime() {
-        return finTime;
-    }
-
-    public void setFinTime(String finTime) {
-        this.finTime = finTime;
     }
 
     public int getStars() {

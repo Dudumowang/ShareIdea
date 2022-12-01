@@ -1,5 +1,6 @@
 package com.example.springboot.service;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.springboot.common.Constants;
 import com.example.springboot.eneity.Idea;
 import com.example.springboot.exception.ServiceException;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class IdeaService {
+public class IdeaService extends ServiceImpl<IdeaMapper, Idea> {
 
     @Autowired
     private IdeaMapper ideaMapper;

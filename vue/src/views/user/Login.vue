@@ -34,12 +34,11 @@ export default {
           password:this.user.password
         }
       }).then(res => {
-        console.log(res)
-        if(res.code==='200') {
+        if(res.code === '200') {
           localStorage.setItem("user", JSON.stringify(res.data)) //存储信息到浏览器
           console.log(JSON.stringify(res.data))
           this.$message.success("登录成功")
-          this.$router.push("/UserHome")
+          this.$router.push("/front")
         } else {
           this.$message.error(res.msg)
         }

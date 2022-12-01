@@ -52,7 +52,35 @@ const routes = [
         component: () => import('../views/user/UserIndex')
       }
     ]
-  }
+  },
+  {
+    path:'/front',
+    name:'前台主页',
+    component: () => import('../views/front/Front'),
+    redirect: '/front/home',
+    children: [
+      {
+        path:'home',
+        name:'FrontHome',
+        component: () => import('../views/front/Home'),
+      },
+      {
+        path: 'person',
+        name:'FrontPerson',
+        component: () => import('../views/front/Person')
+      },
+      {
+        path: 'idea',
+        name:'idea',
+        component: () => import('../views/front/Idea')
+      },
+      {
+        path:'ideaDetail',
+        name:'ideaDetail',
+        component: () => import('../views/front/IdeaDetail')
+      }
+    ]
+  },
 ]
 
 const router = new VueRouter({

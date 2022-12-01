@@ -32,7 +32,7 @@ public class AdminService {
             adminDTO.setEmail(admin.getEmail());
             adminDTO.setMobile(admin.getMobile());
             adminDTO.setAvatarUrl(admin.getAvatarUrl());
-            String token= TokenUtils.genToken(admin.getId(),admin.getPassword());
+            String token= TokenUtils.genToken(Integer.parseInt(admin.getId()),admin.getPassword());
             adminDTO.setToken(token);
             return adminDTO;
         }else{

@@ -7,6 +7,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/global.css'
 import request from "@/utils/request";
 
+// md 编辑器集成
+import mavonEditor from 'mavon-editor';
+import 'mavon-editor/dist/css/index.css'
+
+Vue.use(mavonEditor)
+
 
 
 Vue.config.productionTip = false
