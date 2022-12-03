@@ -1,6 +1,8 @@
 package com.example.springboot.controller;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.StrUtil;
+import com.example.springboot.common.Constants;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.IdeaDTO;
 import com.example.springboot.eneity.Idea;
@@ -8,6 +10,11 @@ import com.example.springboot.eneity.User;
 import com.example.springboot.mapper.IdeaMapper;
 import com.example.springboot.service.IdeaService;
 import com.example.springboot.utils.TokenUtils;
+import io.github.classgraph.json.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.apache.tomcat.util.bcel.Const;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,10 +33,19 @@ public class IdeaController {
 
     @PostMapping("/save")
     @ResponseBody
-    public Result save(@RequestBody Idea idea, @RequestBody User user){
+    public Result save(@RequestBody Param param){
+        Idea idea = param.getIdea();
+        User user = param.getUser();
+        if (StrUtil.equals(idea.getContent(), "")) {
+            return Result.error(Constants.CODE_500, "创意内容不能为空！");
+        }
+        if (StrUtil.equals(idea.getTitle(), "") ) {
+            return Result.error(Constants.CODE_500, "创意标题不能为空！");
+        }
+        idea.setUid(user.getId());
         if (idea.getId() == null) {
             idea.setPubTime(DateUtil.now());
-            idea.setUid(user.getUsername());
+            idea.setUid(user.getId());
         } else {
             idea.setFinTime(DateUtil.now());
         }
@@ -83,4 +99,12 @@ public class IdeaController {
         return Result.success(t);
     }
 
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Param {
+    private Idea idea;
+    private User user;
 }

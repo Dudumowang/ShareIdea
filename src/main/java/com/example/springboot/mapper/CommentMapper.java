@@ -5,6 +5,7 @@ import com.example.springboot.eneity.Comment;
 import com.example.springboot.eneity.Idea;
 import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -20,4 +21,6 @@ public interface CommentMapper extends BaseMapper<Comment> {
     Integer selectTotal(String userId,String ideaId);
 
 
+    @Select("select c.* , u.username, u.avatar_url from comment c left join user u on c.pubid = u.id where c.reId = #{ideaId}")
+    List<Comment> findCommentDetail(@Param("ideaId") Integer ideaId);
 }

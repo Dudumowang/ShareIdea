@@ -19,7 +19,9 @@ public class Idea {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-    private String uid;
+
+    @TableField("uid")
+    private Integer uid;
     private String type;
     private String title;
 
@@ -41,13 +43,6 @@ public class Idea {
         this.id = id;
     }
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
 
     public String getType() {
         return type;

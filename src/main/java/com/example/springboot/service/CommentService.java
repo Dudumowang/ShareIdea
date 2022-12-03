@@ -1,6 +1,7 @@
 package com.example.springboot.service;
 
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.springboot.common.Constants;
 import com.example.springboot.eneity.Comment;
 import com.example.springboot.eneity.Idea;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class CommentService {
+public class CommentService extends ServiceImpl<CommentMapper, Comment> {
 
     @Autowired
     private CommentMapper commentMapper;
@@ -68,4 +69,8 @@ public class CommentService {
         }
     }
 
+    public List<Comment> findCommentDetail(Integer ideaId) {
+
+        return commentMapper.findCommentDetail(ideaId);
+    }
 }

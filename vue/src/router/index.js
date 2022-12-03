@@ -78,6 +78,11 @@ const routes = [
         path:'ideaDetail',
         name:'ideaDetail',
         component: () => import('../views/front/IdeaDetail')
+      },
+      {
+        path:'createIdea',
+        name:'createIdea',
+        component: () => import('../views/front/CreateIdea')
       }
     ]
   },
