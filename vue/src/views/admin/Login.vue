@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     login() {
-      this.request.get("http://localhost:9090/admin/login",{
+      this.request.get("/admin/login",{
         params:{
           id:this.admin.id,
           password:this.admin.password

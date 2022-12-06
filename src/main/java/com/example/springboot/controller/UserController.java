@@ -1,8 +1,10 @@
 package com.example.springboot.controller;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.UserDTO;
+import com.example.springboot.controller.dto.UserDTOWithoutDate;
 import com.example.springboot.eneity.User;
 import com.example.springboot.service.UserService;
+import org.apache.poi.util.SystemOutLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
@@ -37,7 +39,10 @@ public class UserController {
 
     @PostMapping("/delete")
     public Result delete(@RequestBody User user){
-        System.out.println(user.toString());
+        System.out.println("");
+        System.out.println("");
+        System.out.println("User");
+        System.out.println(user);
         boolean t =userService.delete(user);
         return Result.success(t);
     }
@@ -50,11 +55,6 @@ public class UserController {
                            @RequestParam (defaultValue = "") String phone,
                            @RequestParam (defaultValue = "") String email){
         Map<String, Object> res=new HashMap<>();
-        System.out.println("Controller:id");
-        System.out.println(id);
-        System.out.println(username);
-        System.out.println(phone);
-        System.out.println(email);
         res=userService.findPage(pageNum,pageSize,id,username,phone,email);
         return Result.success(res);
     }

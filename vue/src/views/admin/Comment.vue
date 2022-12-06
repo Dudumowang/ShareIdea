@@ -71,7 +71,7 @@ export default {
   },
   methods : {
     load(){
-      this.request.get("http://localhost:9090/comment/page",{
+      this.request.get("/comment/page",{
         params:{
           pageNum:this.pageNum,
           pageSize:this.pageSize,
@@ -111,7 +111,7 @@ export default {
     },
     deleteComment(){
       this.deleteId.id=this.form.id
-      this.request.get("http://localhost:9090/comment/delete",{
+      this.request.get("/comment/delete",{
         params: {
           id: this.form.id
         }

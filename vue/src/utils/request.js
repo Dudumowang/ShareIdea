@@ -1,8 +1,10 @@
 import axios from 'axios'
+import router from "@/router";
+import {serverIp} from "../../public/config";
 
 const request = axios.create({
-    baseURL: '/api',
-    timeout: 5000
+    baseURL: `http://${serverIp}:9090`,
+    timeout: 30000
 })
 
 // request 拦截器

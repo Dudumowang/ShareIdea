@@ -71,7 +71,7 @@ export default {
   },
   methods : {
     load(){
-      this.request.get("http://localhost:9090/idea/page",{
+      this.request.get("/idea/page",{
         params:{
           pageNum:this.pageNum,
           pageSize:this.pageSize,
@@ -93,7 +93,7 @@ export default {
     },
     deleteIdea(){
       console.log(this.form);
-      this.request.get("http://localhost:9090/idea/delete",{
+      this.request.get("/idea/delete",{
         params:{
           id:this.form.id
         }

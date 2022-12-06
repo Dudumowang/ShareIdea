@@ -61,7 +61,7 @@ export default {
     }
   },
   created() {
-    this.request.get("http://localhost:9090/admin/total").then(res=>{
+    this.request.get("/admin/total").then(res=>{
       // console.log(res);
       if(res.code==='200'){
         console.log(res)
@@ -71,7 +71,7 @@ export default {
         this.$message.error(res.msg);
       }
     })
-    this.request.get("http://localhost:9090/user/total").then(res=>{
+    this.request.get("/user/total").then(res=>{
       // console.log(res);
       if(res.code==='200'){
         console.log(res)
@@ -81,7 +81,7 @@ export default {
         this.$message.error(res.msg);
       }
     })
-    this.request.get("http://localhost:9090/idea/total").then(res=>{
+    this.request.get("/idea/total").then(res=>{
       // console.log(res);
       if(res.code==='200'){
         console.log(res)
@@ -91,7 +91,7 @@ export default {
         this.$message.error(res.msg);
       }
     })
-    this.request.get("http://localhost:9090/comment/total").then(res=>{
+    this.request.get("/comment/total").then(res=>{
       // console.log(res);
       if(res.code==='200'){
         console.log(res)

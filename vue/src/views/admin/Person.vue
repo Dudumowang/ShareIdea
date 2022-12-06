@@ -46,7 +46,7 @@ export default {
       this.form.mobile=this.adminDto.mobile
       console.log(this.form)
       console.log(this.form.password)
-      this.request.post("http://localhost:9090/admin/save",this.form).then(res=>{
+      this.request.post("/admin/save",this.form).then(res=>{
         if(res.code==='200'){
           this.$message.success("修改成功")
           //更新LocalStorage

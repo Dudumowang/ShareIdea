@@ -82,7 +82,7 @@ export default {
   },
   methods : {
     load(){
-      this.request.get("http://localhost:9090/admin/page",{
+      this.request.get("/admin/page",{
         params:{
           pageNum:this.pageNum,
           pageSize:this.pageSize,
@@ -105,7 +105,7 @@ export default {
     },
     save(){
       console.log(this.form);
-      this.request.post("http://localhost:9090/admin/insert",this.form).then(res=>{
+      this.request.post("/admin/insert",this.form).then(res=>{
         if(res.code==='200'){
           this.$message.success("保存成功")
           console.log(res)

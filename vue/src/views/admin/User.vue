@@ -7,15 +7,13 @@
       <el-input style="width: 200px" placeholder="请输入邮箱" suffix-icon="el-icon-position" v-model="userEmail" class="ml-5"></el-input>
       <el-button class="ml-5" type="primary" @click="load">搜索</el-button>
     </div>
-    <div style="margin: 10px 0">
-      <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-circle-plus-outline"></i></el-button>
-    </div>
     <el-table :data="tableData" border stripe :header-cell-class-name="headerBg">
       <el-table-column prop="id" label="ID" width="80"></el-table-column>
       <el-table-column prop="username" label="用户名" width="140"></el-table-column>
       <el-table-column prop="email" label="邮箱"></el-table-column>
       <el-table-column prop="phone" label="电话"></el-table-column>
       <el-table-column prop="address" label="地址"></el-table-column>
+      <el-table-column prop="createTime" label="注册时间"></el-table-column>
       <el-table-column label="操作"  width="200" align="center">
         <template slot-scope="scope">
           <el-button type="success" @click="handleEdit(scope.row)">编辑 <i class="el-icon-edit"></i></el-button>
@@ -117,7 +115,7 @@ export default {
   },
   methods : {
     load(){
-      this.request.get("http://localhost:9090/user/page",{
+      this.request.get("/user/page",{
         params:{
           pageNum:this.pageNum,
           pageSize:this.pageSize,
@@ -140,7 +138,7 @@ export default {
     },
     save(){
       console.log(this.form);
-      this.request.post("http://localhost:9090/user/insert",this.form).then(res=>{
+      this.request.post("/user/insert",this.form).then(res=>{
         if(res.code==='200'){
           this.$message.success("保存成功")
           console.log(res)
@@ -152,7 +150,7 @@ export default {
     },
     update(){
       console.log(this.form);
-      this.request.post("http://localhost:9090/user/adminUpdate",this.form).then(res=>{
+      this.request.post("/user/adminUpdate",this.form).then(res=>{
         if(res.code==='200'){
           this.$message.success("修改成功")
           console.log(res)
@@ -167,8 +165,9 @@ export default {
       this.load();
     },
     deleteUser(){
+      console.log("form");
       console.log(this.form);
-      this.request.post("http://localhost:9090/user/delete",this.form).then(res=>{
+      this.request.post("/user/delete",this.form).then(res=>{
         if(res.code==='200'){
           this.$message.success("删除成功")
           console.log(res)

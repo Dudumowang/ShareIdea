@@ -4,6 +4,7 @@ package com.example.springboot.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.springboot.common.Constants;
 import com.example.springboot.controller.dto.UserDTO;
+import com.example.springboot.controller.dto.UserDTOWithoutDate;
 import com.example.springboot.eneity.User;
 import com.example.springboot.exception.ServiceException;
 import com.example.springboot.mapper.UserMapper;
@@ -41,6 +42,24 @@ public class UserService {
         }else{
             throw new ServiceException(Constants.CODE_600,"用户名或密码错误");
         }
+    }
+
+    public User selectByID(String id){
+           User t;
+           int affect;
+           try{
+               QueryWrapper<User> queryWrapper=new QueryWrapper<>();
+               queryWrapper.eq("id",id);
+               t=userMapper.selectOne(queryWrapper);
+           }catch (Exception e){
+               throw new ServiceException(Constants.CODE_500,"系统错误");
+           }
+           if(t==null){
+               throw new ServiceException(Constants.CODE_600,"参数错误");
+           }
+           else{
+               return t;
+           }
     }
 
     public boolean insert(User user){
@@ -123,31 +142,19 @@ public class UserService {
     public boolean delete(User user){
         int affect;
         User temp;
-        try{
+        System.out.println(user);
+        try {
             QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("id",user.getId()).eq("password",user.getPassword());
-            temp=userMapper.selectOne(queryWrapper);
+            queryWrapper.eq("id",user.getId());
+            affect = userMapper.delete(queryWrapper);
         }catch (Exception e){
-            throw new ServiceException(Constants.CODE_500,"系统错误1");
+            throw new ServiceException(Constants.CODE_500,"系统错误");
         }
-        if(temp==null){
-            throw new ServiceException(Constants.CODE_600,"密码错误1");
+        if(affect>0){
+            return true;
         }
-        //经过校验密码正确
-        else {
-            try {
-                QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-                queryWrapper.eq("id",user.getId());
-                affect = userMapper.delete(queryWrapper);
-            }catch (Exception e){
-                throw new ServiceException(Constants.CODE_500,"系统错误2");
-            }
-            if(affect>0){
-                return true;
-            }
-            else{
-                throw new ServiceException(Constants.CODE_600,"参数错误2");
-            }
+        else{
+            throw new ServiceException(Constants.CODE_600,"参数错误");
         }
     }
 
@@ -167,6 +174,7 @@ public class UserService {
 
         try {
             data=userMapper.selectPage(pageNum,pageSize,id,username,phone,email);
+            System.out.println(data);
             total = userMapper.selectTotal(id,username,phone,email);
         }catch (Exception e){
             throw new ServiceException(Constants.CODE_500,"系统错误");
@@ -174,6 +182,7 @@ public class UserService {
         Map<String, Object> res=new HashMap<>();
         res.put("data",data);
         res.put("total",total);
+
         return res;
     }
 

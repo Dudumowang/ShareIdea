@@ -43,7 +43,7 @@ export default {
         this.form.id=this.adminDto.id
         this.form.oldPassword=this.oldPassword
         this.form.newPassword=this.newPassword
-        this.request.post("http://localhost:9090/admin/changePassword", this.form).then(res => {
+        this.request.post("/admin/changePassword", this.form).then(res => {
           if(res.code==='200'){
             this.$message.success("修改成功")
             //退回到登录页面
