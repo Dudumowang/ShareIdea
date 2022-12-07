@@ -7,10 +7,6 @@
            :collapse="isCollapse"
            router
   >
-    <div style="height: 60px; line-height: 60px; text-align: center">
-      <img src="../assets/logo.png" alt="" style="width: 20px; position: relative; top: 5px;">
-      <b style="color: white; margin-left: 5px" >后台管理系统</b>
-    </div>
     <el-menu-item index="/home">
       <template slot="title">
         <i class="el-icon-house"></i>

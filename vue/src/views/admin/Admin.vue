@@ -12,10 +12,8 @@
     </div>
     <el-table :data="tableData" border stripe :header-cell-class-name="headerBg">
       <el-table-column prop="id" label="ID" width="120"></el-table-column>
-      <el-table-column prop="name" label="用户名" width="140"></el-table-column>
       <el-table-column prop="email" label="邮箱" width="140"></el-table-column>
       <el-table-column prop="mobile" label="电话" width="140"></el-table-column>
-      <el-table-column prop="address" label="地址" width="140"></el-table-column>
     </el-table>
     <div style="padding: 10px 0">
       <el-pagination
