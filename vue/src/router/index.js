@@ -9,7 +9,7 @@ const routes = [
     path: '/',
     name: 'Mange',
     component: ()=>import('../views/admin/Mange.vue'),
-    redirect:"home",
+    redirect:"userLogin",
     children:[
       {path:'home', name:'首页', component:()=>import('../views/admin/Home.vue')},
       {path:'person',name:'个人信息',component:()=>import('../views/admin/Person.vue')},
