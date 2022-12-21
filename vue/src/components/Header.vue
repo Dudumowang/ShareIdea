@@ -8,7 +8,7 @@
       </el-breadcrumb>
     </div>
     <el-dropdown style="width: 70px; cursor: pointer">
-      <span>{{this.admin.id}}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
+      <span>{{this.admin.name}}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
       <el-dropdown-menu slot="dropdown" >
         <el-dropdown-item style="font-size: 14px; padding: 5px 0">
           <router-link to="/person">个人信息</router-link>

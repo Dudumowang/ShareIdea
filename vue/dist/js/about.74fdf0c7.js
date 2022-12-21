@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkShareIdea_Admin"]=self["webpackChunkShareIdea_Admin"]||[]).push([[443],{5399:function(n,e,t){t.r(e),t.d(e,{default:function(){return l}});var u=function(){var n=this;n._self._c;return n._m(0)},a=[function(){var n=this,e=n._self._c;return e("div",{staticClass:"about"},[e("h1",[n._v("This is an about page")])])}],s=t(1001),r={},i=(0,s.Z)(r,u,a,!1,null,null,null),l=i.exports}}]);
+//# sourceMappingURL=about.74fdf0c7.js.map

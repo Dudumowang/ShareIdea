@@ -2,6 +2,7 @@ package com.example.springboot.controller.dto;
 
 public class AdminDTO {
     private String id;
+    private String name;
     private String mobile;
     private String email;
     private String token;
@@ -24,6 +25,14 @@ public class AdminDTO {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setEmail(String email) {

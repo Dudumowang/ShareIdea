@@ -18,7 +18,8 @@ const routes = [
       {path:'admin', name:'管理员管理', component:()=>import('../views/admin/Admin.vue')},
       {path:'idea',name:'Idea管理',component:()=>import('../views/admin/Idea.vue')},
       {path:'comment',name:'Comment管理',component:()=>import('../views/admin/Comment.vue')},
-      {path: 'file', name: '文件管理', component: () => import('../views/admin/File.vue')}
+      {path: 'file', name: '文件管理', component: () => import('../views/admin/File.vue')},
+      {path: 'role', name: '角色管理', component: () => import('../views/admin/Role.vue')}
     ]
   },
   {

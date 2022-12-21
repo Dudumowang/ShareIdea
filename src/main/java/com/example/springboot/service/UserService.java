@@ -99,7 +99,7 @@ public class UserService {
             queryWrapper.eq("id",user.getId()).eq("password",user.getPassword());
             temp=userMapper.selectOne(queryWrapper);
         }catch (Exception e){
-            throw new ServiceException(Constants.CODE_500,"系统错误");
+            throw new ServiceException(Constants.CODE_500,"系统错误123");
         }
         if(temp==null){
             throw new ServiceException(Constants.CODE_600,"密码错误");

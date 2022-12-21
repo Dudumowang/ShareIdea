@@ -13,7 +13,7 @@ public class User {
     private String email;
     private String phone;
     private String address;
-    private String createTime;
+    private String createtime;
     private String avatarUrl;
 
     public String getId() {
@@ -65,11 +65,11 @@ public class User {
     }
 
     public String getCreateTime() {
-        return createTime;
+        return createtime;
     }
 
     public void setCreateTime(String createTime) {
-        this.createTime = createTime;
+        this.createtime = createTime;
     }
 
     public String getAvatarUrl() {
@@ -89,7 +89,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
-                ", createTime='" + createTime + '\'' +
+                ", createTime='" + createtime + '\'' +
                 ", avatarUrl='" + avatarUrl + '\'' +
                 '}';
     }

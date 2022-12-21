@@ -1,9 +1,10 @@
 <template>
   <div>
     <div style="margin: 10px 0">
-      <el-input style="width: 200px" placeholder="请输入用户名" suffix-icon="el-icon-message" v-model="userid" class="ml-5"></el-input>
-      <el-input style="width: 200px" placeholder="请输入标题" suffix-icon="el-icon-position" v-model="ideaTitle" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入用户名" suffix-icon="el-icon-user" v-model="userid" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入标题" suffix-icon="el-icon-news" v-model="ideaTitle" class="ml-5"></el-input>
       <el-button class="ml-5" type="primary" @click="load">搜索</el-button>
+      <el-button type="warning" @click="reset">重置</el-button>
     </div>
     <el-table :data="tableData" border stripe :header-cell-class-name="headerBg">
       <el-table-column prop="id" label="ID" width="80"></el-table-column>
@@ -107,6 +108,11 @@ export default {
           this.$message.error(res.msg)
         }
       })
+    },
+    reset() {
+      this.userid = ""
+      this.ideaTitle = ""
+      this.load()
     },
     handleContent(row){
       this.form=row

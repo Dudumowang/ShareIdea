@@ -2,16 +2,17 @@
   <div>
     <div style="margin: 10px 0">
       <el-input style="width: 200px" placeholder="请输入ID" suffix-icon="el-icon-search" v-model="userid"></el-input>
-      <el-input style="width: 200px" placeholder="请输入用户名" suffix-icon="el-icon-message" v-model="username" class="ml-5"></el-input>
-      <el-input style="width: 200px" placeholder="请输入手机号" suffix-icon="el-icon-position" v-model="userMobile" class="ml-5"></el-input>
-      <el-input style="width: 200px" placeholder="请输入邮箱" suffix-icon="el-icon-position" v-model="userEmail" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入用户名" suffix-icon="el-icon-user" v-model="username" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入手机号" suffix-icon="el-icon-mobile" v-model="userMobile" class="ml-5"></el-input>
+      <el-input style="width: 200px" placeholder="请输入邮箱" suffix-icon="el-icon-message" v-model="userEmail" class="ml-5"></el-input>
       <el-button class="ml-5" type="primary" @click="load">搜索</el-button>
+      <el-button type="warning" @click="reset">重置</el-button>
     </div>
     <el-table :data="tableData" border stripe :header-cell-class-name="headerBg">
       <el-table-column prop="id" label="ID" width="80"></el-table-column>
       <el-table-column prop="username" label="用户名" width="140"></el-table-column>
       <el-table-column prop="email" label="邮箱"></el-table-column>
-      <el-table-column prop="phone" label="电话"></el-table-column>
+      <el-table-column prop="phone" label="手机号"></el-table-column>
       <el-table-column prop="address" label="地址"></el-table-column>
       <el-table-column prop="createTime" label="注册时间"></el-table-column>
       <el-table-column label="操作"  width="200" align="center">
@@ -121,7 +122,7 @@ export default {
           pageSize:this.pageSize,
           id:this.userid,
           username:this.username,
-          mobile:this.userMobile,
+          phone:this.userMobile,
           email:this.userEmail
         }
       }).then(res=>{
@@ -177,6 +178,13 @@ export default {
           this.$message.error(res.msg)
         }
       })
+    },
+    reset() {
+      this.userid = ""
+      this.username = ""
+      this.userEmail = ""
+      this.userMobile = ""
+      this.load()
     },
     handleAdd(){
       this.dialogFormVisible=true;

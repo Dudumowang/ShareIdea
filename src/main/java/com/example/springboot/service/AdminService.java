@@ -5,6 +5,7 @@ import com.example.springboot.common.Constants;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.AdminDTO;
 import com.example.springboot.eneity.Admin;
+import com.example.springboot.eneity.User;
 import com.example.springboot.exception.ServiceException;
 import com.example.springboot.mapper.AdminMapper;
 import com.example.springboot.utils.TokenUtils;
@@ -32,6 +33,7 @@ public class AdminService {
         if(admin!=null){
             AdminDTO adminDTO = new AdminDTO();
             adminDTO.setId(admin.getId());
+            adminDTO.setName(admin.getName());
             adminDTO.setEmail(admin.getEmail());
             adminDTO.setMobile(admin.getMobile());
             String token= TokenUtils.genToken(admin.getId(),admin.getPassword());
@@ -139,22 +141,23 @@ public class AdminService {
 
     }
 
-    public Map<String, Object> findPage(Integer pageNum, Integer pageSize, String id,String mobile, String email) {
+    public Map<String, Object> findPage(Integer pageNum, Integer pageSize, String id, String name, String mobile, String email) {
             pageNum=(pageNum-1)*pageSize;
             List<Admin> data;
             Integer total;
 
             System.out.println(id);
             id="%"+id+"%";
+            name="%"+name+"%";
             mobile="%"+mobile+"%";
             email="%"+email+"%";
             System.out.println("id:\n");
             System.out.println(id);
 
             try {
-                data=adminMapper.selectPage(pageNum,pageSize,id,mobile,email);
+                data=adminMapper.selectPage(pageNum,pageSize,id,name,mobile,email);
                 System.out.println(data);
-                total = adminMapper.selectTotal(id,mobile,email);
+                total = adminMapper.selectTotal(id,name,mobile,email);
             }catch (Exception e){
                 throw new ServiceException(Constants.CODE_500,"系统错误");
             }
@@ -173,5 +176,14 @@ public class AdminService {
             throw new ServiceException(Constants.CODE_500,"系统错误");
         }
         return t;
+    }
+
+    public List<Admin> list() {
+        List<Admin> data;
+        data = adminMapper.findAll();
+        return data;
+    }
+
+    public void saveBatch(List<Admin> admins) {
     }
 }

@@ -175,7 +175,4 @@ public class FileController {
         return Result.success(fileMapper.selectPage(new Page<>(pageNum, pageSize), queryWrapper));
     }
 
-
-
-
 }

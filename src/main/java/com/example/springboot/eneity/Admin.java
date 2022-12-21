@@ -2,6 +2,7 @@ package com.example.springboot.eneity;
 
 public class Admin {
     private String id;
+    private String name;
     private String password;
 
     private String mobile;
@@ -10,6 +11,14 @@ public class Admin {
 
     public String getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setId(String id) {
